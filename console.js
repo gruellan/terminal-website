@@ -1,15 +1,19 @@
 
 $(function () {
-    // term = $("#console");
-    // term.text("george@ruellan ~ $ ");
-
-    // Typing animation
-    $("[data-typer]").attr("data-typer", function (i, txt) {
-        var $typer = $(this), char = 0;
-        (function typeIt() {
-            if (char > txt.length) return;
-            $typer.text(txt.substring(0, char++));
-            setTimeout(typeIt, 50);
-        }());
+    $("#firstline").typed({
+        strings: ["cat welcome.txt"],
+        typeSpeed: 10,
+        onStringTyped: () => {
+            $("#welcome").typed({
+                strings: ["welcome to george's terminal. here you can do cool stuff.<br>type ls or something"],
+                typeSpeed: 10,
+                onStringTyped: () => {
+                    $("#prompt").typed({
+                        strings: ["george@ruellan ~ $ "],
+                        typeSpeed: 10,
+                    });
+                },
+            })
+        }
     });
 });

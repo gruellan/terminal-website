@@ -7,16 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>George Ruellan</title>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
   <script src="console.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div id="body">
-    <p><span class="prompt">george@ruellan ~ $ </span><span data-typer="cat welcome.txt"></span></p>
-    <!-- <p><span data-typer="welcome to george's terminal"></span></p> -->
+  <div class="container">
+    <p><span class="prompt">george@ruellan ~ $ </span><span id="firstline"></span></p>
+    <p id="welcome"></p>
+    <p><span class="prompt" id="prompt"></span><input class="input" autofocus></input></p>
     <div id="terminal"></div>
   </div>
 </body>
+
 </html>
